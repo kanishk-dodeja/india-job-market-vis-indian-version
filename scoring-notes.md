@@ -1,62 +1,86 @@
-# AI Exposure Scoring Notes — India Job Market Visualizer
+# India Job Market Visualizer — Data Methodology & Sources
 
-## Methodology
-
-AI exposure scores (1.0–10.0) represent the estimated degree to which a sub-major occupational group's tasks can be augmented or displaced by current and near-term generative AI systems (LLMs, computer vision, robotic process automation, agentic AI). Scores were assigned using a triangulation framework across three primary research streams:
-
-1. **Task decomposition analysis**: Each occupation's task bundle (from NCO-2015 task descriptions and O*NET crosswalks) was evaluated for the proportion of tasks classified as "routine cognitive," "non-routine cognitive," or "physical/manual." Routine cognitive tasks (data entry, document processing, standard analysis) receive higher exposure scores.
-
-2. **Research-backed sector findings**: Published ILO, WEF, and Oxford research provided quantitative exposure estimates for specific occupational clusters. Where direct India-specific data existed (ILO Working Paper 96 on India, ILO India Employment Report 2024), those findings were prioritized over global averages.
-
-3. **India-specific structural adjustments**: Scores were moderated for India's unique context — informal economy prevalence (90%+ of workers), low wage floors (reducing automation ROI), digital infrastructure gaps in rural and semi-urban areas, and sector-specific regulatory environments.
-
-**Score anchors:**
-- 1.0–2.0: Near-zero AI relevance (subsistence agriculture, street vendors, sanitation workers)
-- 2.5–3.5: Low exposure — physical presence essential, AI augments minimally (construction, caregiving, protective services)
-- 4.0–5.5: Moderate exposure — AI handles portions of the task bundle but human judgment or physical work is central (drivers, plant operators, craft trades)
-- 6.0–7.5: High exposure — AI handles significant task share; job content shifting materially (ICT technicians, business professionals, engineers)
-- 8.0–10.0: Critical exposure — AI displaces the primary task bundle; headcount contraction underway or imminent (clerical workers, data entry, BPO call centre agents)
+**Dataset version:** May 2026 rebuild  
+**Total workforce represented:** 5,630 lakhs (563 million), per PLFS 2022-23
 
 ---
 
-## Score Ranges by Major Group
+## 1. Primary Sources
 
-| Major Group | NCO Code | Sub-majors | Score Range | Rationale |
-|---|---|---|---|---|
-| Armed Forces | 0 | 01, 02, 03 | 2.5 – 3.5 | Classified operational contexts, physical readiness requirements, and nascent defence AI adoption insulate this group |
-| Managers | 1 | 11–14 | 4.5 – 6.5 | Administrative and commercial management faces significant LLM augmentation; operational leadership retains human primacy |
-| Professionals | 2 | 21–26 | 3.5 – 8.5 | Wide range: ICT professionals (8.5) at peak exposure; health professionals (3.5) insulated by physical care and India's doctor shortage |
-| Technicians and Associate Professionals | 3 | 31–35 | 3.5 – 7.5 | BPO-adjacent business associate roles (7.5) and ICT technicians (7.5) highly exposed; healthcare associates (3.5) resilient |
-| Clerical Support Workers | 4 | 41–44 | 8.0 – 9.0 | Highest-exposure group per ILO WP96; general clerks and numerical recorders face near-critical displacement risk |
-| Services and Sales Workers | 5 | 51–54 | 2.5 – 5.5 | Personal care (2.5) and protective services (3.0) resilient; formal retail sales (5.5) faces AI-driven inventory/recommendation pressure |
-| Skilled Agricultural, Forestry and Fishery Workers | 6 | 61–63 | 1.5 – 2.5 | Lowest-exposure professional group; subsistence farmers (1.5) structurally immune to AI deployment |
-| Craft and Related Trades Workers | 7 | 71–75 | 2.5 – 4.5 | Physical trades insulated by unstructured environments and India's low labour costs; handicraft GI-tag premium protects artisans |
-| Plant and Machine Operators and Assemblers | 8 | 81–83 | 4.0 – 5.5 | Medium exposure; India's low assembly wages give a 5–10 year buffer vs developed economy automation timelines |
-| Elementary Occupations | 9 | 91–96 | 1.5 – 2.5 | Very low; physical variability, informal employment, and wage floors below automation ROI threshold |
+### Worker Counts
+- **PLFS 2022-23** (NSO/MoSPI): Periodic Labour Force Survey, Annual Report 2022-23. Used for major group totals and sub-group distribution ratios. Grand total anchored to 5,630 lakhs (563M) employed workforce.
+- **ILO India Employment Report 2024**: Cross-check on sector shares, agricultural employment reversal post-COVID.
+- **NASSCOM FY25 Annual Report**: IT-BPM sector headcount (5.8 million).
+- **Economic Survey 2025-26**: PLI scheme job creation (12.6 lakh jobs by September 2025).
+
+### Wages
+- **PLFS earnings tables (2022-23)**: Usual principal status earnings by occupation group.
+- **Labour Bureau Wage Rate Survey**: Agricultural and construction daily wages.
+- **RBI Annual Report 2022-23**: Agricultural daily wage (Rs 323/day national average, year ended March 2022).
+- **NASSCOM / Talent500 Salary Benchmarks**: IT sector median wages (Rs 6.5-7.5 lakh for ICT professionals).
+- **PayScale India**: Nursing (Rs 3 lakh median), allied health roles.
+- **FR8.in Truck Driver Salary Survey 2023**: Rs 3-3.6 lakh annually for truck drivers.
+- **Glassdoor India / Indeed India**: Manager salary bands (Rs 13.6-21 lakh for administrative managers).
+- **CollegeSearch / Shiksha 2023**: Teacher salary data (Rs 3.5-4.5 lakh government + private blended).
+- **Flowace.ai BPO Salary Report**: Entry-level clerk wages (Rs 2.1-2.6 lakh annually).
+- **MGNREGA official data**: Subsistence agricultural worker wage floor (Rs 225-374/day, 100 guaranteed days).
+- **Central Government Minimum Wage Schedule 2022-23**: Construction skilled trades (Rs 600-900/day).
+
+### AI Exposure Scores (1-10 scale)
+- **ILO Working Paper 96** (Gmyrek, Berg, Bescond, 2023): "Generative AI and Jobs: A Global Analysis of Potential Effects by Occupation and Sector." Primary framework for occupation-level task exposure assessment.
+- **ILO Working Paper 140**: Finance and business occupations exposure detail.
+- **WEF Future of Jobs Report 2023**: Occupation displacement/creation projections, top 26 million at-risk roles by 2027.
+- **Task-based scoring methodology**: Each occupation scored 1-10 on AI exposure using the ILO framework:
+  - 1-2: Primarily physical, outdoor, or informal — negligible AI applicability
+  - 3-4: Physical roles with some cognitive tasks; AI augments but cannot replace
+  - 5-6: Mixed cognitive/physical; AI handles a meaningful portion of tasks
+  - 7-8: Predominantly cognitive, routine-heavy; AI displaces significant task share
+  - 9-10: Near-fully cognitive, routine, and text/data-based; AI handles majority of core tasks
+- **India-specific calibration**: Scores adjusted downward from global baselines where (a) labour costs make automation economically non-viable, (b) informal employment context removes employer capacity to deploy AI tools, or (c) India-specific infrastructure gaps (no AV regulatory framework, rural digital infrastructure absent) delay realistic deployment.
+
+### Outlook Percentages
+- **ILO India Employment Report 2024**: Sector-level employment projections through 2030.
+- **WEF Future of Jobs 2023**: Net job creation/destruction ratios by occupation cluster.
+- **NASSCOM FY24 / FY25 data**: IT-BPM sector net hiring collapse (FY23: 270,000 net hires; FY24: 60,000).
+- **Jefferies India BPO Research Note 2024**: 50% BPO revenue risk from AI over 5 years.
+- **PM Gati Shakti / NIP data**: Construction and infrastructure employment projections (45 crore man-days).
+- **PLI Scheme tracking (MoCI)**: Manufacturing employment (12.6 lakh jobs, September 2025).
+- **Lancet (peer-reviewed)**: India nursing shortfall of 1.98 million by 2030.
 
 ---
 
-## Primary Sources
+## 2. Key Data Decisions
 
-**ILO Research (International Labour Organization)**
-- ILO Working Paper 96: "Generative AI and Jobs: A Global Analysis of Potential Effects on Job Quantity and Quality" (2023) — Provides occupation-level exposure estimates for developing economies including India.
-- ILO India Employment Report 2024: "Youth Employment Trends and Pathways" — India-specific sector analysis and automation risk quantification.
-- ILO Working Paper 140: "The Impact of Artificial Intelligence on Employment: A Global Perspective" — Identifies clerical occupations as highest-exposure cluster globally.
+### Armed Forces (NCO Group 0) Removed
+The NCO-2015 Group 0 (Armed Forces) is excluded from the visualizer. PLFS does not classify armed forces workers within the standard 9-group NCO framework for civilian labour market analysis. The 5,630 lakh total is the civilian employed workforce.
 
-**WEF Research**
-- World Economic Forum Future of Jobs Report 2023 — Provides 26M job displacement estimates by 2027 for clerical and administrative roles; identifies fast-growing AI/ML roles offsetting losses.
+### Agriculture Worker Counts (Revised)
+Previous dataset showed NCO 61 at 1,173 lakhs — significantly overstated relative to PLFS 2022-23 sub-major group data. Revised to 720 lakhs (market-oriented skilled agricultural workers), 174 lakhs (forestry/fishery), 276 lakhs (subsistence) = 1,170 lakhs total for Group 6. This aligns with the PLFS 2022-23 finding that agriculture accounts for ~45.76% of employment across all agricultural NCO codes including Group 9 labourers.
 
-**Oxford / ILO Research**
-- Banga & te Velde (ODI/ILO), "Preparing for the Digital Economy" — Automation susceptibility estimates for South Asian occupational clusters cross-referenced with NCO-2015 codes.
-- Frey & Osborne (2013/2017 updates) — Foundational occupation-level automation probability estimates, adapted for India's task distribution and wage context.
+### Clerical Worker Counts (Revised Upward)
+Previous dataset showed very low clerical counts (NCO 41: 38 lakhs, NCO 42: 45 lakhs) that understated India's formal BPO and back-office workforce. Revised to 80 and 90 respectively to reflect NASSCOM's documented 2-2.5 million call centre workforce plus broader back-office processing scale.
 
-**McKinsey Global Institute**
-- McKinsey Global Institute India 2023: "India's Turning Point" and "Generative AI: The Next Productivity Frontier" — Sector-level productivity impact and workforce transformation projections for India's IT, BFSI, and manufacturing sectors.
+### Driver Wages (Corrected)
+Previous wage of Rs 200,000 for NCO 83 was understated. FR8.in 2023 survey data confirms truck drivers earn Rs 3-3.6 lakh annually. Revised to Rs 300,000.
 
-**India Government Data**
-- PLFS 2022-23 (Periodic Labour Force Survey, NSO/MoSPI) — Primary source for workers_lakhs estimates and employment structure by NCO major group.
-- NCO-2015 (National Classification of Occupations, MoSPI) — Occupational hierarchy and task descriptions used for group-level exposure analysis.
+### ICT Professional Wages (Corrected Downward)
+Previous median of Rs 1,100,000 overstated the workforce average by anchoring on senior/specialist salaries. Talent500 and NASSCOM data shows the workforce median is Rs 6.5-7.5 lakh. Revised to Rs 700,000 to represent the full distribution including junior roles.
+
+### AI Exposure for NCO 33 and NCO 44 (Outlook Labels Corrected)
+Previous dataset marked NCO 33 (Business/Admin Associate Professionals) outlook as "Slower than average" (-5%) and NCO 44 as "Slower than average" (-8%). Both corrected to "Declining" label to match the negative outlook_pct values — the label was inconsistent with the data.
 
 ---
 
-*Scoring last reviewed: May 2026. Scores should be reassessed annually as AI capability and adoption evolve.*
+## 3. Data Limitations and Caveats
+
+1. **Informal sector estimation**: 90%+ of India's workforce is informal. PLFS captures employment status but wages for informal workers are self-reported and may understate true earnings due to piece-rate work and seasonal variability.
+
+2. **Sub-major group granularity**: PLFS 2022-23 publicly available data provides major group totals more reliably than sub-major group (2-digit) breakdowns. Sub-major allocations use proportional distribution based on earlier PLFS waves and NSS 68th round ratios.
+
+3. **AI exposure is task-based, not vacancy-based**: Scores represent the theoretical share of work tasks that current LLMs and automation could perform — not observed displacement. Actual displacement lags exposure due to capital investment cycles, regulatory barriers, and India-specific labour cost economics.
+
+4. **Outlook percentages are illustrative growth bands**: The outlook_pct field represents approximate annual net employment change (%), synthesising ILO/WEF projections. They are directional indicators, not point forecasts.
+
+5. **Wage figures are annual median estimates**: Wages represent estimated median annual earnings (including informal piece-rate and agricultural day labour converted to annual equivalent). They do not represent mode or mean, and formal-sector medians will be significantly higher than these workforce-weighted figures.
+
+6. **Currency**: All wages are in nominal INR as of 2022-23. No inflation adjustment applied across sub-groups.
