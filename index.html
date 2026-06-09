@@ -38,6 +38,9 @@
     .stat-sub { color: #777; font-size: 10px; }
     #legend { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 10px; color: #555; }
     #legend-gradient { width: 100px; height: 8px; border-radius: 4px; }
+    #legend-swatches { display: none; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .legend-swatch { display: inline-flex; align-items: center; gap: 4px; color: #777; }
+    .legend-swatch i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; }
     #breadcrumb { padding: 6px 20px; background: #0f3460; font-size: 12px; color: #888; display: none; cursor: pointer; }
     #breadcrumb span { color: #e94560; text-decoration: underline; }
     #treemap-container { width: 100%; overflow: hidden; }
@@ -135,8 +138,14 @@ const LAYERS = {
     getValue: d => d.education,
     makeScale: () => d3.scaleOrdinal()
       .domain(EDUCATION_ORDER)
-      .range(['#c0392b','#e67e22','#27ae60','#2980b9','#8e44ad']),
-    legendGradient: 'linear-gradient(to right,#c0392b,#e67e22,#27ae60,#2980b9,#8e44ad)',
+      .range(['#7f8c8d','#4c78a8','#59a14f','#b07aa1','#f28e2b']),
+    legendSwatches: [
+      ['No formal', '#7f8c8d'],
+      ['HS', '#4c78a8'],
+      ['Bachelor', '#59a14f'],
+      ['Master', '#b07aa1'],
+      ['Doctoral', '#f28e2b']
+    ],
     legendLeft: 'No degree', legendRight: 'Doctoral',
     format: v => v || '—'
   }
@@ -264,9 +273,29 @@ function stat(label, value, sub, color) {
 
 function updateLegend() {
   const cfg = LAYERS[activeLayer];
-  document.getElementById('legend-gradient').style.background = cfg.legendGradient;
-  document.getElementById('legend-left').textContent = cfg.legendLeft;
-  document.getElementById('legend-right').textContent = cfg.legendRight;
+  const gradient = document.getElementById('legend-gradient');
+  let swatches = document.getElementById('legend-swatches');
+  if (!swatches) {
+    swatches = document.createElement('div');
+    swatches.id = 'legend-swatches';
+    gradient.insertAdjacentElement('afterend', swatches);
+  }
+  if (cfg.legendSwatches) {
+    gradient.style.display = 'none';
+    swatches.style.display = 'flex';
+    swatches.innerHTML = cfg.legendSwatches
+      .map(([label, color]) => '<span class="legend-swatch"><i style="background:' + color + '"></i>' + label + '</span>')
+      .join('');
+    document.getElementById('legend-left').textContent = '';
+    document.getElementById('legend-right').textContent = '';
+  } else {
+    gradient.style.display = 'block';
+    gradient.style.background = cfg.legendGradient;
+    swatches.style.display = 'none';
+    swatches.innerHTML = '';
+    document.getElementById('legend-left').textContent = cfg.legendLeft;
+    document.getElementById('legend-right').textContent = cfg.legendRight;
+  }
 }
 
 // ============================================================
