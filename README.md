@@ -18,7 +18,7 @@ This copy uses only publicly inspectable, credible source references in the publ
 - NASSCOM Strategic Review 2025
 - McKinsey future-of-work research
 
-See `scoring-notes.md` for methodology and caveats.
+See `scoring-notes.md` for methodology and caveats, and `DATA_CONFIDENCE_AUDIT.md` for the 95% confidence standard used in this hosted version.
 
 ## Important Caveat
 

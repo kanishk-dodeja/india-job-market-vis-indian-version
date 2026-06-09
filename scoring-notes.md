@@ -1,8 +1,18 @@
 # India Job Market Visualizer - Data Methodology and Sources
 
-Dataset version: June 2026 hosted copy
+Dataset version: June 2026 confidence-audited copy
 
 This visualizer is a modeled dashboard, not an official statistical release. It combines public Indian labour-market statistics with occupation-level AI exposure research to make the India job-market picture easier to explore.
+
+## Confidence Standard
+
+The dataset is intended to be 95% defensible as a source-backed model, not 95% precise as a row-level official dataset. That means:
+
+- High confidence: source choice, occupation taxonomy, overall labour-market anchor, relative AI exposure bands, and the distinction between measured data and modeled estimates.
+- Medium-high confidence: directional comparisons across occupations, such as clerical work being more exposed than agricultural or care work.
+- Bounded confidence: exact two-digit worker counts, wage point estimates, and five-year outlook percentages. These are modeled values used for visualization and should be read as approximate.
+
+To preserve that confidence standard, the public page labels worker counts, wages, and outlook as estimated or directional, and tooltip text avoids unsupported company-specific or private-source claims.
 
 ## Credible Source Base
 
@@ -54,6 +64,7 @@ Employment outlook and wage fields are directional, not point forecasts. They sy
 - Sub-major occupation counts are estimates when public data does not provide exact two-digit NCO counts.
 - Informal earnings are difficult to estimate and may be under-reported in survey data.
 - Some occupation summaries mention examples from companies or sectors to make the risk intuitive; the source base above is the evidence foundation for the dashboard.
+- Do not interpret the numeric fields as official point statistics. They are midpoints used to size and color an explanatory visualization.
 
 ## Attribution
 
