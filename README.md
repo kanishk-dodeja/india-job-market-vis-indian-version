@@ -20,6 +20,8 @@ This copy uses only publicly inspectable, credible source references in the publ
 
 See `methodology.html` for methodology and caveats, and `confidence-audit.html` for the 95% confidence standard used in this hosted version.
 
+Public website notices are included in `terms.html`, `privacy.html`, and `disclaimer.html`.
+
 ## Important Caveat
 
 This is a modeled explanatory dashboard. It is not an official government dataset and should not be read as a precise job-loss forecast. AI exposure means task exposure to current AI systems; it does not automatically mean worker displacement.
