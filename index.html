@@ -9,7 +9,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kanishk-dodeja.github.io/india-job-market-vis-indian-version/" />
   <meta property="og:title" content="India Job Market Visualizer — AI Exposure Dashboard" />
-  <meta property="og:description" content="Which Indian jobs are most exposed to AI? An interactive treemap of 560M workers across 40 occupation groups — scored by Digital AI Exposure, median pay, outlook and education. Powered by PLFS 2022-23, ILO and WEF research." />
+  <meta property="og:description" content="Which Indian jobs are most exposed to AI? A source-backed model of ~560M workers across 40 occupation groups, using PLFS 2022-23, NCO-2015, ILO and WEF research." />
   <meta property="og:image" content="https://kanishk-dodeja.github.io/india-job-market-vis-indian-version/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,7 +17,7 @@
   <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="India Job Market Visualizer — AI Exposure Dashboard" />
-  <meta name="twitter:description" content="Which Indian jobs are most exposed to AI? Interactive treemap of 560M workers scored by Digital AI Exposure. Powered by PLFS 2022-23, ILO and WEF data." />
+  <meta name="twitter:description" content="Which Indian jobs are most exposed to AI? A source-backed model of ~560M workers across 40 occupation groups, using PLFS 2022-23, NCO-2015, ILO and WEF research." />
   <meta name="twitter:image" content="https://kanishk-dodeja.github.io/india-job-market-vis-indian-version/preview.png" />
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -66,11 +66,11 @@
 <body>
 <div id="header">
   <h1>India Job Market Visualizer</h1>
-  <p class="subtitle">~560M workers · PLFS 2022-23 · AI exposure scored from ILO 2023/2025 and WEF Future of Jobs 2023 · Modeled on Karpathy's US Job Market Visualizer</p>
+  <p class="subtitle">~560M workers · PLFS 2022-23 + NCO-2015 · AI exposure from ILO 2023/2025 · outlook context from WEF Future of Jobs 2023 · Modeled on Karpathy's US Job Market Visualizer</p>
   <div id="layer-controls">
     <button class="layer-btn active" data-layer="ai_exposure">Digital AI Exposure</button>
-    <button class="layer-btn" data-layer="median_wage">Median Pay</button>
-    <button class="layer-btn" data-layer="outlook">Employment Outlook</button>
+    <button class="layer-btn" data-layer="median_wage">Estimated Pay</button>
+    <button class="layer-btn" data-layer="outlook">Directional Outlook</button>
     <button class="layer-btn" data-layer="education">Education Level</button>
   </div>
   <div id="stats-bar"></div>
@@ -86,12 +86,13 @@
 <div id="footer">
   <strong>Credible source base:</strong>
   <a href="https://mospi.gov.in/sites/default/files/publication_reports/AR_PLFS_2022_23N.pdf" target="_blank" rel="noopener">PLFS 2022-23 (NSO/MoSPI)</a> &middot;
-  <a href="https://dge.gov.in/dge/index.php/nco-2015" target="_blank" rel="noopener">NCO-2015 (DGE/MoLE)</a> &middot;
+  <a href="https://www.ncs.gov.in/documents/national%20classification%20of%20occupations%20_vol%20i-%202015.pdf" target="_blank" rel="noopener">NCO-2015 (DGE/MoLE)</a> &middot;
   <a href="https://www.ilo.org/publications/generative-ai-and-jobs-global-analysis-potential-effects-job-quantity-and" target="_blank" rel="noopener">ILO GenAI and Jobs 2023</a> &middot;
   <a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener">ILO GenAI exposure index 2025</a> &middot;
-  <a href="https://www.weforum.org/reports/the-future-of-jobs-report-2023/" target="_blank" rel="noopener">WEF Future of Jobs 2023</a> &middot;
+  <a href="https://www3.weforum.org/docs/WEF_Future_of_Jobs_2023.pdf" target="_blank" rel="noopener">WEF Future of Jobs 2023</a> &middot;
   <a href="https://www.ilo.org/publications/india-employment-report-2024-youth-employment-education-and-skills" target="_blank" rel="noopener">India Employment Report 2024</a> &middot;
-  <a href="scoring-notes.md">methodology notes</a> &middot; <a href="DATA_CONFIDENCE_AUDIT.md">confidence audit</a>
+  <a href="methodology.html">methodology notes</a> &middot; <a href="confidence-audit.html">confidence audit</a>
+  <br><strong>Interpretation:</strong> source-backed modeled estimates for comparison; not official point statistics or a job-loss forecast.
 </div>
 
 <script>

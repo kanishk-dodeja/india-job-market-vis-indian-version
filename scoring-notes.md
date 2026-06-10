@@ -19,14 +19,14 @@ To preserve that confidence standard, the public page labels worker counts, wage
 ### Employment Counts and Occupation Taxonomy
 
 - Periodic Labour Force Survey (PLFS) Annual Report 2022-23, National Statistical Office, Ministry of Statistics and Programme Implementation: https://mospi.gov.in/sites/default/files/publication_reports/AR_PLFS_2022_23N.pdf
-- National Classification of Occupations (NCO-2015), Directorate General of Employment, Ministry of Labour and Employment: https://dge.gov.in/dge/index.php/nco-2015
+- National Classification of Occupations (NCO-2015), Directorate General of Employment, Ministry of Labour and Employment: https://www.ncs.gov.in/documents/national%20classification%20of%20occupations%20_vol%20i-%202015.pdf
 - India Employment Report 2024, Institute for Human Development and International Labour Organization: https://www.ilo.org/publications/india-employment-report-2024-youth-employment-education-and-skills
 
 ### AI Exposure Framework
 
 - ILO Working Paper 96, "Generative AI and Jobs: A Global Analysis of Potential Effects on Job Quantity and Quality" (2023): https://www.ilo.org/publications/generative-ai-and-jobs-global-analysis-potential-effects-job-quantity-and
 - ILO Working Paper 140, "Generative AI and Jobs: A Refined Global Index of Occupational Exposure" (2025): https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure
-- World Economic Forum, "The Future of Jobs Report 2023": https://www.weforum.org/reports/the-future-of-jobs-report-2023/
+- World Economic Forum, "The Future of Jobs Report 2023": https://www3.weforum.org/docs/WEF_Future_of_Jobs_2023.pdf
 
 ### Wage and Sector Cross-Checks
 

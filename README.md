@@ -1,6 +1,6 @@
 # India Job Market Visualizer
 
-An India-focused interactive treemap of occupations, worker counts, median pay, employment outlook, education level, and digital AI exposure.
+An India-focused interactive treemap of occupations, estimated worker counts, estimated median pay, directional employment outlook, education level, and digital AI exposure.
 
 Live site: https://kanishk-dodeja.github.io/india-job-market-vis-indian-version/
 
@@ -18,7 +18,7 @@ This copy uses only publicly inspectable, credible source references in the publ
 - NASSCOM Strategic Review 2025
 - McKinsey future-of-work research
 
-See `scoring-notes.md` for methodology and caveats, and `DATA_CONFIDENCE_AUDIT.md` for the 95% confidence standard used in this hosted version.
+See `methodology.html` for methodology and caveats, and `confidence-audit.html` for the 95% confidence standard used in this hosted version.
 
 ## Important Caveat
 

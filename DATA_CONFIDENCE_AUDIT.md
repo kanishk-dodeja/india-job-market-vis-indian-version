@@ -1,6 +1,6 @@
 # Data Confidence Audit
 
-Audit date: 9 June 2026
+Audit date: 10 June 2026
 
 ## Verdict
 
@@ -11,7 +11,7 @@ This target is met after the June 2026 audit because the public-facing dataset n
 ## What Is 95% Defensible
 
 - The project uses credible public institutions for its source base: NSO/MoSPI PLFS, DGE/MoLE NCO-2015, ILO GenAI occupational exposure research, WEF Future of Jobs, ILO India Employment Report, RBI, NASSCOM, and McKinsey.
-- The treemap occupation labels follow NCO-style two-digit occupation groupings.
+- The treemap occupation labels use NCO-style two-digit occupation groupings, with simplified display labels for student-readable exploration.
 - The AI exposure ranking is directionally defensible: clerical, customer-service, ICT, business-administration, and routine document/data occupations are high exposure; agriculture, care, cleaning, construction, and other physical/informal occupations are lower exposure.
 - The overall workforce anchor remains internally consistent at 5,630 lakhs across 40 visible occupation rows.
 
